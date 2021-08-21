@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29905.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Label Print", "Label Print.csproj", "{A8E9C85F-001D-4561-BE12-089E29E9A70E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6F0818CD-FA49-4F40-BF75-E1F375FEB6E2}"
+	ProjectSection(SolutionItems) = preProject
+		RawPrinterHelper.cs = RawPrinterHelper.cs
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A8E9C85F-001D-4561-BE12-089E29E9A70E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8E9C85F-001D-4561-BE12-089E29E9A70E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8E9C85F-001D-4561-BE12-089E29E9A70E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8E9C85F-001D-4561-BE12-089E29E9A70E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E86546CC-79BE-4214-998B-BF55008F7500}
+	EndGlobalSection
+EndGlobal
