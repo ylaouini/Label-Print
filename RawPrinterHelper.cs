@@ -5,7 +5,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
-namespace ID_PRINTER
+namespace Label_Print
 {
     public class RawPrinterHelper
     {
