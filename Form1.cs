@@ -1705,13 +1705,11 @@ namespace Label_Print
                     str = str.Replace("@ETOILE", txtETOILE.Text);
                     str = str.Replace("@PRFX", txtPRFX.Text);
                     str = str.Replace("@HOURS", dtpicker.Value.ToString("hh:mm"));
-                    str = str.Replace("@MINUTE", minute.ToString());
-                    //str = str.Replace("@SECOND", DateTime.Now.Second.ToString());
                     Random rnd = new Random();
                     rnd.Next(1,60);
                     str = str.Replace("@COUNTER", rnd.Next(10, 60) + rnd.Next(10, 60).ToString());
                   
-                    minute += 2;
+                    //minute += 2;
 
                     str = str.Replace("@JJ", day.ToString());
                     str = str.Replace("@MM", month.ToString());

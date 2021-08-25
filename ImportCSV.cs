@@ -362,45 +362,7 @@ namespace Label_Print
                     
                     if (EPN != "" && EPN != null)
                     {
-                        string str = File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\LabelPrint\\Template\\" + guna2ComboBox1.Text);
-                        str = str.Replace("@EPN", Convert.ToString(dr["EPN"]));
-                        str = str.Replace("@CPN1", Convert.ToString(dr["CPN1"]));
-                        str = str.Replace("@CPN2", Convert.ToString(dr["CPN2"]));
-                        str = str.Replace("@CPN3", Convert.ToString(dr["CPN3"]));
-                        str = str.Replace("@ALERT1", Convert.ToString(dr["ALERT1"]));
-                        str = str.Replace("@ALERT2", Convert.ToString(dr["ALERT2"]));
-                        str = str.Replace("@ALERT3", Convert.ToString(dr["ALERT3"]));
-                        str = str.Replace("@RELEASE", Convert.ToString(dr["RELEASE"]));
-                        str = str.Replace("@FIRST_CUSTOMER", Convert.ToString(dr["CUSTOMER"]));
-                        str = str.Replace("@FAMILLE", Convert.ToString(dr["FAMILY"]));
-                        str = str.Replace("@OPERID", Convert.ToString(dr["OPERATOR"]));
-                        str = str.Replace("@OLL", Convert.ToString(dr["OLL"]));
-                        str = str.Replace("@LOT", Convert.ToString(dr["LOT"]));
-                        str = str.Replace("@LEVEL", Convert.ToString(dr["LEVEL"]));
-                        str = str.Replace("@INDICE", Convert.ToString(dr["INDICE"]));
-                        str = str.Replace("@ETOILE", Convert.ToString(dr["ETOILE"]));
-                        str = str.Replace("@PRFX", Convert.ToString(dr["PRFX"]));
-
-                        str = str.Replace("@JJ", day.ToString());
-                        str = str.Replace("@MM", month.ToString());
-                        str = str.Replace("@YY", year.ToString());
-                        //str = str.Replace("@HOURS", hour.ToString());
-                        str = str.Replace("@HOURS", form1.dtpicker.Value.ToString("hh:mm:ss"));
-                        str = str.Replace("@MINUTE", minute.ToString());
-                        Random rnd = new Random();
-                        str = str.Replace("@COUNTER", rnd.Next(10, 60) + rnd.Next(10, 60).ToString());
-
-                        if (form1.jjmmyyyy.Checked == true)
-                        {
-                            str = str.Replace("@DATETIME", form1.dtpicker.Value.ToString("dd/MM/yyyy"));
-                            str = str.Replace("@YY", year.ToString());
-                        }
-                        else
-                        {
-                            str = str.Replace("@DATETIME", form1.dtpicker.Value.ToString("dd/MM/yy"));
-                            str = str.Replace("@YY", year.ToString().Substring(2));
-                        }
-
+                        
                         int copy = Convert.ToInt32(dr["QUANTITE"]);
 
                         System.Threading.Thread.Sleep(1500);
@@ -414,12 +376,47 @@ namespace Label_Print
                             {
                                 for (int cp = 0; cp < copy; cp++)
                                 {
-                                    str = str.Replace("@MINUTE", minute.ToString());
-                                    //str = str.Replace("@SECOND", DateTime.Now.Second.ToString());
+                                    string str = File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\LabelPrint\\Template\\" + guna2ComboBox1.Text);
+                                    str = str.Replace("@EPN", Convert.ToString(dr["EPN"]));
+                                    str = str.Replace("@CPN1", Convert.ToString(dr["CPN1"]));
+                                    str = str.Replace("@CPN2", Convert.ToString(dr["CPN2"]));
+                                    str = str.Replace("@CPN3", Convert.ToString(dr["CPN3"]));
+                                    str = str.Replace("@ALERT1", Convert.ToString(dr["ALERT1"]));
+                                    str = str.Replace("@ALERT2", Convert.ToString(dr["ALERT2"]));
+                                    str = str.Replace("@ALERT3", Convert.ToString(dr["ALERT3"]));
+                                    str = str.Replace("@RELEASE", Convert.ToString(dr["RELEASE"]));
+                                    str = str.Replace("@FIRST_CUSTOMER", Convert.ToString(dr["CUSTOMER"]));
+                                    str = str.Replace("@FAMILLE", Convert.ToString(dr["FAMILY"]));
+                                    str = str.Replace("@OPERID", Convert.ToString(dr["OPERATOR"]));
+                                    str = str.Replace("@OLL", Convert.ToString(dr["OLL"]));
+                                    str = str.Replace("@LOT", Convert.ToString(dr["LOT"]));
+                                    str = str.Replace("@LEVEL", Convert.ToString(dr["LEVEL"]));
+                                    str = str.Replace("@INDICE", Convert.ToString(dr["INDICE"]));
+                                    str = str.Replace("@ETOILE", Convert.ToString(dr["ETOILE"]));
+                                    str = str.Replace("@PRFX", Convert.ToString(dr["PRFX"]));
+
+                                    str = str.Replace("@JJ", day.ToString());
+                                    str = str.Replace("@MM", month.ToString());
+                                    str = str.Replace("@YY", year.ToString());
+                                    str = str.Replace("@HOURS", form1.dtpicker.Value.ToString("hh:mm"));
+                                    Random rnd = new Random();
                                     str = str.Replace("@COUNTER", rnd.Next(10, 60) + rnd.Next(10, 60).ToString());
-                                    minute += 2;
+
+                                    if (form1.jjmmyyyy.Checked == true)
+                                    {
+                                        str = str.Replace("@DATETIME", form1.dtpicker.Value.ToString("dd/MM/yyyy"));
+                                        str = str.Replace("@YY", year.ToString());
+                                    }
+                                    else
+                                    {
+                                        str = str.Replace("@DATETIME", form1.dtpicker.Value.ToString("dd/MM/yy"));
+                                        str = str.Replace("@YY", year.ToString().Substring(2));
+                                    }
+
 
                                     RawPrinterHelper.SendStringToPrinter(pd.PrinterSettings.PrinterName, str);
+                                    form1.dtpicker.Value = form1.dtpicker.Value.AddMinutes(2);
+
                                 }
                                 printer = pd.PrinterSettings.PrinterName;
                             }
@@ -428,11 +425,45 @@ namespace Label_Print
                         {
                             for (int cp = 0; cp < copy; cp++)
                             {
-                                str = str.Replace("@MINUTE", minute.ToString());
-                                //str = str.Replace("@SECOND", DateTime.Now.Second.ToString());
+                                string str = File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\LabelPrint\\Template\\" + guna2ComboBox1.Text);
+                                str = str.Replace("@EPN", Convert.ToString(dr["EPN"]));
+                                str = str.Replace("@CPN1", Convert.ToString(dr["CPN1"]));
+                                str = str.Replace("@CPN2", Convert.ToString(dr["CPN2"]));
+                                str = str.Replace("@CPN3", Convert.ToString(dr["CPN3"]));
+                                str = str.Replace("@ALERT1", Convert.ToString(dr["ALERT1"]));
+                                str = str.Replace("@ALERT2", Convert.ToString(dr["ALERT2"]));
+                                str = str.Replace("@ALERT3", Convert.ToString(dr["ALERT3"]));
+                                str = str.Replace("@RELEASE", Convert.ToString(dr["RELEASE"]));
+                                str = str.Replace("@FIRST_CUSTOMER", Convert.ToString(dr["CUSTOMER"]));
+                                str = str.Replace("@FAMILLE", Convert.ToString(dr["FAMILY"]));
+                                str = str.Replace("@OPERID", Convert.ToString(dr["OPERATOR"]));
+                                str = str.Replace("@OLL", Convert.ToString(dr["OLL"]));
+                                str = str.Replace("@LOT", Convert.ToString(dr["LOT"]));
+                                str = str.Replace("@LEVEL", Convert.ToString(dr["LEVEL"]));
+                                str = str.Replace("@INDICE", Convert.ToString(dr["INDICE"]));
+                                str = str.Replace("@ETOILE", Convert.ToString(dr["ETOILE"]));
+                                str = str.Replace("@PRFX", Convert.ToString(dr["PRFX"]));
+
+                                str = str.Replace("@JJ", day.ToString());
+                                str = str.Replace("@MM", month.ToString());
+                                str = str.Replace("@YY", year.ToString());
+                                str = str.Replace("@HOURS", form1.dtpicker.Value.ToString("hh:mm"));
+                                Random rnd = new Random();
                                 str = str.Replace("@COUNTER", rnd.Next(10, 60) + rnd.Next(10, 60).ToString());
-                                minute = minute + 2;
+
+                                if (form1.jjmmyyyy.Checked == true)
+                                {
+                                    str = str.Replace("@DATETIME", form1.dtpicker.Value.ToString("dd/MM/yyyy"));
+                                    str = str.Replace("@YY", year.ToString());
+                                }
+                                else
+                                {
+                                    str = str.Replace("@DATETIME", form1.dtpicker.Value.ToString("dd/MM/yy"));
+                                    str = str.Replace("@YY", year.ToString().Substring(2));
+                                }
+                               
                                 RawPrinterHelper.SendStringToPrinter(printer, str);
+                                form1.dtpicker.Value = form1.dtpicker.Value.AddMinutes(2);
                             }
                         }
 
