@@ -338,7 +338,7 @@ namespace Label_Print
             try
             {
                 DataTable dtItem = (DataTable)(dgvImportCSV.DataSource);
-
+                Random rnd = new Random();
                 string EPN;
 
                 int i = 0;
@@ -367,6 +367,7 @@ namespace Label_Print
 
                         System.Threading.Thread.Sleep(1500);
 
+                       
                         if (i == 0)
                         {
                             PrintDialog pd = new PrintDialog();
@@ -399,8 +400,8 @@ namespace Label_Print
                                     str = str.Replace("@MM", month.ToString());
                                     str = str.Replace("@YY", year.ToString());
                                     str = str.Replace("@HOURS", form1.dtpicker.Value.ToString("hh:mm"));
-                                    Random rnd = new Random();
-                                    str = str.Replace("@COUNTER", rnd.Next(10, 60) + rnd.Next(10, 60).ToString());
+                                  
+                                    str = str.Replace("@COUNTER", rnd.Next(1000, 9999).ToString());
 
                                     if (form1.jjmmyyyy.Checked == true)
                                     {
@@ -448,8 +449,9 @@ namespace Label_Print
                                 str = str.Replace("@MM", month.ToString());
                                 str = str.Replace("@YY", year.ToString());
                                 str = str.Replace("@HOURS", form1.dtpicker.Value.ToString("hh:mm"));
-                                Random rnd = new Random();
-                                str = str.Replace("@COUNTER", rnd.Next(10, 60) + rnd.Next(10, 60).ToString());
+                                
+                                
+                                str = str.Replace("@COUNTER", rnd.Next(1000, 8000).ToString());
 
                                 if (form1.jjmmyyyy.Checked == true)
                                 {

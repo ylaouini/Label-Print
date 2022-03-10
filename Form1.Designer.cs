@@ -41,6 +41,7 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.jjmmyy = new Guna.UI2.WinForms.Guna2RadioButton();
             this.jjmmyyyy = new Guna.UI2.WinForms.Guna2RadioButton();
@@ -73,6 +74,7 @@
             this.panel23 = new System.Windows.Forms.Panel();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnCopy = new Guna.UI2.WinForms.Guna2Button();
             this.btnEdition = new Guna.UI2.WinForms.Guna2Button();
             this.btnNew = new Guna.UI2.WinForms.Guna2Button();
             this.btnPrint = new Guna.UI2.WinForms.Guna2Button();
@@ -98,7 +100,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -226,6 +227,21 @@
             this.groupBox2.TabIndex = 50;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "OPTION";
+            // 
+            // guna2Button3
+            // 
+            this.guna2Button3.CheckedState.Parent = this.guna2Button3;
+            this.guna2Button3.CustomImages.Parent = this.guna2Button3;
+            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button3.ForeColor = System.Drawing.Color.White;
+            this.guna2Button3.HoverState.Parent = this.guna2Button3;
+            this.guna2Button3.Location = new System.Drawing.Point(458, 19);
+            this.guna2Button3.Name = "guna2Button3";
+            this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
+            this.guna2Button3.Size = new System.Drawing.Size(24, 38);
+            this.guna2Button3.TabIndex = 66;
+            this.guna2Button3.Text = "-";
+            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click_1);
             // 
             // guna2Button2
             // 
@@ -364,7 +380,7 @@
             this.dtpicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpicker.ImeMode = System.Windows.Forms.ImeMode.On;
             this.dtpicker.Location = new System.Drawing.Point(154, 68);
-            this.dtpicker.Margin = new System.Windows.Forms.Padding(20);
+            this.dtpicker.Margin = new System.Windows.Forms.Padding(20, 20, 20, 20);
             this.dtpicker.Name = "dtpicker";
             this.dtpicker.Size = new System.Drawing.Size(330, 27);
             this.dtpicker.TabIndex = 62;
@@ -748,12 +764,13 @@
             this.progressBar1.Location = new System.Drawing.Point(0, 0);
             this.progressBar1.MarqueeAnimationSpeed = 1;
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(1212, 10);
+            this.progressBar1.Size = new System.Drawing.Size(1207, 10);
             this.progressBar1.TabIndex = 59;
             this.progressBar1.Visible = false;
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.btnCopy);
             this.groupBox4.Controls.Add(this.btnEdition);
             this.groupBox4.Controls.Add(this.btnNew);
             this.groupBox4.Controls.Add(this.btnPrint);
@@ -800,6 +817,23 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Data Label";
             // 
+            // btnCopy
+            // 
+            this.btnCopy.Animated = true;
+            this.btnCopy.CheckedState.Parent = this.btnCopy;
+            this.btnCopy.CustomImages.Parent = this.btnCopy;
+            this.btnCopy.Enabled = false;
+            this.btnCopy.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCopy.ForeColor = System.Drawing.Color.White;
+            this.btnCopy.HoverState.Parent = this.btnCopy;
+            this.btnCopy.Location = new System.Drawing.Point(352, 383);
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.ShadowDecoration.Parent = this.btnCopy;
+            this.btnCopy.Size = new System.Drawing.Size(100, 45);
+            this.btnCopy.TabIndex = 72;
+            this.btnCopy.Text = "Copy";
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
+            // 
             // btnEdition
             // 
             this.btnEdition.Animated = true;
@@ -814,7 +848,7 @@
             this.btnEdition.ShadowDecoration.Parent = this.btnEdition;
             this.btnEdition.Size = new System.Drawing.Size(100, 45);
             this.btnEdition.TabIndex = 71;
-            this.btnEdition.Text = "EDITE";
+            this.btnEdition.Text = "Edit";
             this.btnEdition.Click += new System.EventHandler(this.guna2Button4_Click);
             // 
             // btnNew
@@ -1031,27 +1065,12 @@
             this.panel1.Size = new System.Drawing.Size(315, 1);
             this.panel1.TabIndex = 55;
             // 
-            // guna2Button3
-            // 
-            this.guna2Button3.CheckedState.Parent = this.guna2Button3;
-            this.guna2Button3.CustomImages.Parent = this.guna2Button3;
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.HoverState.Parent = this.guna2Button3;
-            this.guna2Button3.Location = new System.Drawing.Point(458, 19);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
-            this.guna2Button3.Size = new System.Drawing.Size(24, 38);
-            this.guna2Button3.TabIndex = 66;
-            this.guna2Button3.Text = "-";
-            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click_1);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1212, 462);
+            this.ClientSize = new System.Drawing.Size(1207, 462);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.progressBar1);
@@ -1155,6 +1174,7 @@
         public Guna.UI2.WinForms.Guna2RadioButton jjmmyyyy;
         public Guna.UI2.WinForms.Guna2RadioButton jjmmyy;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button btnCopy;
     }
 }
 

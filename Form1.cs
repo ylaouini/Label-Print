@@ -999,6 +999,7 @@ namespace Label_Print
             {
                 btnPrint.Enabled = true;
                 btnEdition.Enabled = true;
+                btnCopy.Enabled = true ;
                 DBAccess.FillDataTable(Query, Table);
 
 
@@ -1664,7 +1665,7 @@ namespace Label_Print
             int day = dtpicker.Value.Day;
             int minute = dtpicker.Value.Minute;
             int hour = dtpicker.Value.Hour;
-
+            Random rnd = new Random();
             try
             {
                 File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\LabelPrint\\Template\\" + cbTemplate.Text);
@@ -1705,9 +1706,9 @@ namespace Label_Print
                     str = str.Replace("@ETOILE", txtETOILE.Text);
                     str = str.Replace("@PRFX", txtPRFX.Text);
                     str = str.Replace("@HOURS", dtpicker.Value.ToString("hh:mm"));
-                    Random rnd = new Random();
-                    rnd.Next(1,60);
-                    str = str.Replace("@COUNTER", rnd.Next(10, 60) + rnd.Next(10, 60).ToString());
+                    
+                    
+                    str = str.Replace("@COUNTER", rnd.Next(1000, 9999).ToString());
                   
                     //minute += 2;
 
@@ -1764,6 +1765,13 @@ namespace Label_Print
                     MessageBox.Show("Template Deleted Successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+        }
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            CopyRef copyRef = new CopyRef();
+            copyRef.epn = txtEPN.Text;
+            copyRef.ShowDialog();
         }
     }
                     
