@@ -90,7 +90,7 @@
             this.guna2ImageCheckBox7.CheckedState.Parent = this.guna2ImageCheckBox7;
             this.guna2ImageCheckBox7.HoverState.Parent = this.guna2ImageCheckBox7;
             this.guna2ImageCheckBox7.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageCheckBox7.Image")));
-            this.guna2ImageCheckBox7.IndicateFocus = false;
+            //this.guna2ImageCheckBox7.IndicateFocus = false;
             this.guna2ImageCheckBox7.Location = new System.Drawing.Point(107, 590);
             this.guna2ImageCheckBox7.Name = "guna2ImageCheckBox7";
             this.guna2ImageCheckBox7.PressedState.Parent = this.guna2ImageCheckBox7;
@@ -103,7 +103,7 @@
             this.guna2ImageCheckBox10.CheckedState.Parent = this.guna2ImageCheckBox10;
             this.guna2ImageCheckBox10.HoverState.Parent = this.guna2ImageCheckBox10;
             this.guna2ImageCheckBox10.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageCheckBox10.Image")));
-            this.guna2ImageCheckBox10.IndicateFocus = false;
+            //this.guna2ImageCheckBox10.IndicateFocus = false;
             this.guna2ImageCheckBox10.Location = new System.Drawing.Point(107, 614);
             this.guna2ImageCheckBox10.Name = "guna2ImageCheckBox10";
             this.guna2ImageCheckBox10.PressedState.Parent = this.guna2ImageCheckBox10;

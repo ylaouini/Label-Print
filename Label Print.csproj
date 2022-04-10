@@ -54,7 +54,7 @@
       <HintPath>packages\CsvHelper.15.0.5\lib\net47\CsvHelper.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI2">
-      <HintPath>..\..\..\Desktop\Guna.UI-Framework-Lib-master\Guna.UI2.WinForms_v2.0.0.6\.net 4.0\Guna.UI2.dll</HintPath>
+      <HintPath>..\..\..\Desktop\New Machine book  v3.0.0\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="LumenWorks.Framework.IO, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5ad3ea2f85776344, processorArchitecture=MSIL">
       <HintPath>packages\LumenWorksCsvReader.4.0.0\lib\net461\LumenWorks.Framework.IO.dll</HintPath>
